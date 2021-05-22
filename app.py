@@ -6,6 +6,11 @@ app = Flask(__name__, static_url_path='/static/')
 def index():
     return render_template("index.html")
 
+
+@app.route('/text-summarizer')
+def text_summarizer():
+    return render_template("inner-page.html")
+
 @app.route('/output',methods=['POST'])
 def output():
     if request.method == 'POST':
